@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void backtrack(string s, int openCount, int closeCount, int m, vector<string>& res) {
+    if(s.length() == 2 * m) {
+        res.push_back(s);
+        return;
+    }
+    if(openCount < m) {
+        s.push_back('[');
+        backtrack(s, openCount + 1, closeCount, m, res);
+        s.pop_back();
+    }
+    if(closeCount < openCount) {
+        s.push_back(']');
+        backtrack(s, openCount, closeCount + 1, m, res);
+        s.pop_back();
+    }
+}
+
+vector<string> generateBrackets(int m) {
+    vector<string> res;
+    string s = "";
+    backtrack(s, 0, 0, m, res);
+    return res;
+}
+
+int main() {
+    int m;
+    cout << "Enter pair of brackets(m): ";
+    cin >> m;
+    vector<string> res = generateBrackets(m);
+    for(auto k : res)
+        cout << k << " ";
+    cout << endl;
+    return 0;
+}
