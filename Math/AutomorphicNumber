@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n, digits = 0;
+    cout << "Enter any number: ";
+    cin >> n;
+    long long square = n * n;
+    long long temp = n;
+    while(temp != 0) {
+        digits++;
+        temp /= 10;
+    }
+    long long divisor = 1;
+    for (int i = 0; i < digits; i++)
+        divisor *= 10;
+
+    if(square % divisor == n)
+        cout << n << " is Automorphic number" << endl;
+    else
+         cout << n << " is not Automorphic number" << endl;
+}
