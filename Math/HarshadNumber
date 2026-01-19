@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool checkHarshadNumber(int num) {
+    int sum = 0;
+    int r;
+    int temp = num;
+    while(num>0) {
+        r = num%10;
+        sum += r;
+        num /= 10;
+    }
+    return (temp%sum == 0);    
+}
+
+int main() {
+    int num;
+    cout << "Enter any harshad number: ";
+    cin >> num;
+    if(checkHarshadNumber(num))
+        cout << "true";
+    else cout << "false";
+}
