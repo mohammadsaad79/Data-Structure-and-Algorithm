@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool checkArmstrongNumber(int num) {
+    int numCount = num;
+    int count = 0;
+    while(numCount!=0){
+        numCount /= 10;
+        count++;
+    }
+    int sum = 0;
+    int digit;
+    int number = num;
+    int val;
+    while(number!=0){
+        digit = number %10;
+        val = pow(digit, count);
+        sum += val;
+        number /=10;
+    }
+    return sum==num;
+}
+
+int main() {
+    int num;
+    cout << "Enter any number: ";
+    cin >> num;
+    if(checkArmstrongNumber(num))
+        cout << "true";
+    else cout << "false";
+}
