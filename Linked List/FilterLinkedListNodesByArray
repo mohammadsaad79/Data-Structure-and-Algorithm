@@ -1,0 +1,12 @@
+Node* deleteNodes(Node* head, vector<int>& arr) {
+  unordered_set<int> valuesToDelete(arr.begin(), arr.end());
+  Node* temp = new Node(0);
+  temp -> next = head;
+  Node* curr = temp;
+  while(curr -> next != NULL) {
+    if(valuesToDelete.count(curr -> next -> data))
+      curr -> next = curr -> next -> next;
+    else curr = curr -> next;
+  }
+  return temp -> next;
+}
