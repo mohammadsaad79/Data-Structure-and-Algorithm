@@ -1,0 +1,8 @@
+vector<int> convertToArray(Node* head) {
+    vector<int> res;
+    while(head != NULL) {
+        res.push_back(head -> data);
+        head = head -> next;
+    }
+    return res;
+}
