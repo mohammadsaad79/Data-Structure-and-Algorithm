@@ -1,0 +1,18 @@
+void printEven(int n) {
+    if(n == 0) return;
+    printEven(n - 1);
+    if(n % 2 == 0)
+        cout << n << " ";
+}
+
+void printOdd(int n) {
+    if(n == 0) return;
+    if(n % 2 != 0)
+        cout << n << " ";
+    printOdd(n - 1);
+}
+
+void printEvenOdd(int n) {
+    printEven(n);
+    printOdd(n);
+}
