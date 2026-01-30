@@ -1,0 +1,14 @@
+int sumOfFactorialsOfDigits(int n) {
+    int last_digit;
+    int sum = 0;
+    while(last_digit != 0){
+        last_digit = n % 10;
+        sum += fact(last_digit);
+        n /= 10;
+    }
+    return sum  -1;
+}
+int fact(int num){
+    if(num == 0 || num == 1) return 1;
+    return num * fact(num - 1);
+}
