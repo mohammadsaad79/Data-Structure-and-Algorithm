@@ -1,0 +1,9 @@
+vector<long long> factorialSequence(int n) {
+    vector<long long> result;
+    long long fact = 1;
+    for(int i = 1; i <= n; i++) {
+        fact *= i;
+        result.push_back(fact);
+    }
+    return result;
+}
