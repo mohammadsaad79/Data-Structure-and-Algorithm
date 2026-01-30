@@ -1,0 +1,4 @@
+int recursionSum(int N) {
+    if(N == 0) return 0;
+    return recursionSum(N - 1) + N;    
+}
