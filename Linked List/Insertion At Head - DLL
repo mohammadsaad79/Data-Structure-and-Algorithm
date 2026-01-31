@@ -1,0 +1,13 @@
+Node* insertionAtHead(Node* head, int a) {
+    if(head == NULL) {
+        Node* head = new Node(a);
+        return head;
+    }
+    else {
+        Node* temp = new Node(a);
+        head -> prev = temp;
+        temp -> next = head;
+        head = temp;
+    }
+    return head;
+}
