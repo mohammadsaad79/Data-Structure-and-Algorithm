@@ -1,0 +1,12 @@
+Node* deletionAtHead(Node* head) {
+    if(head == NULL) return NULL;
+    if(head -> next == NULL) {
+        delete head;
+        return NULL;
+    } 
+    Node* temp = head;
+    head = temp -> next;
+    head -> prev = NULL;
+    delete temp;
+    return head;
+}
